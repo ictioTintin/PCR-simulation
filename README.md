@@ -59,7 +59,7 @@ tar xf ../taxdump.tar.gz
 cd ..
 ```
 
-###Format data for OBITools
+### Format data for OBITools
 
 ```
 # Activate OBITools
