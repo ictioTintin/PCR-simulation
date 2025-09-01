@@ -39,7 +39,7 @@ To run the pipeline, you need:
 
 ## Usage
 
-### 1. Download data
+### Download data
 
 ```bash
 mkdir mitochondria2
