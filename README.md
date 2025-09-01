@@ -57,3 +57,36 @@ mkdir ncbi20150518
 cd ncbi20150518/
 tar xf ../taxdump.tar.gz
 cd ..
+```
+
+###Format data for OBITools
+
+```
+# Activate OBITools
+cd /home/user/programs
+./obitools
+
+# Return to working directory
+cd /home/user/mitochondria2
+
+# Format taxonomy
+obitaxonomy -t ncbi20150518 -d ncbi20150518
+
+# Merge genomes
+obiconvert mitochondria/* > mito.all.fasta
+head -5 mito.all.fasta
+
+# Select vertebrates
+ecofind -d ncbi20150518 '^vertebrata$'
+obigrep -d ncbi20150518 -r 7742 mito.all.fasta > mito.vert.fasta
+
+# Convert to ecoPCR database
+obiconvert -d ncbi20150518 --ecopcrdb-output=mito.vert mito.vert.fasta
+```
+
+
+
+
+
+
+
